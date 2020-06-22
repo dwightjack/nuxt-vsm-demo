@@ -13,7 +13,7 @@
 import Vue from "vue";
 import Logo from "~/components/Logo.vue";
 import { createMapper } from "vuex-smart-module";
-import { module as demoStore } from "~/store/modules/demo";
+import demoStore from "~/store/demo";
 
 const demoMapper = createMapper(demoStore);
 

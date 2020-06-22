@@ -1,17 +1,17 @@
 import { Getters, Actions, Mutations, Module } from 'vuex-smart-module'
 
 
-class DemoState {
+export class DemoState {
   message = ''
 }
 
-class DemoMutations extends Mutations<DemoState> {
+export class DemoMutations extends Mutations<DemoState> {
   setMessage(msg: string) {
     this.state.message = msg
   }
 }
 
-class DemoActions extends Actions<
+export class DemoActions extends Actions<
 DemoState,
 Getters<DemoState>,
 DemoMutations,
@@ -23,7 +23,7 @@ DemoActions
 }
 
 
-export const module = new Module({
+export default new Module({
   state: DemoState,
   mutations: DemoMutations,
   actions: DemoActions

@@ -1,15 +1,17 @@
-import { Module, createStore} from 'vuex-smart-module'
-import { module as demo} from './modules/demo'
+import { Module} from 'vuex-smart-module'
+import demo from './demo'
 
-const rootModule = new Module({
+export const root = new Module({
   modules: {
     demo
   }
 })
-
-const { options, injectStore} = (rootModule as any).create([], '')
-
-export const modules = options.modules
-
-// wewewwwwwsssssrrreeezzzwww
-export const plugins = [injectStore]
+// www
+export const {
+  state,
+  getters,
+  mutations,
+  actions,
+  modules,
+  plugins
+} = root.getStoreOptions()
