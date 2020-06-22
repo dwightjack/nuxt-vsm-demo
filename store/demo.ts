@@ -10,7 +10,6 @@ export class DemoMutations extends Mutations<DemoState> {
     this.state.message = msg
   }
 }
-
 export class DemoActions extends Actions<
 DemoState,
 Getters<DemoState>,
@@ -18,7 +17,7 @@ DemoMutations,
 DemoActions
 > {
   setMessage(str: string) {
-    this.commit('setMessage', str)
+    this.mutations.setMessage(str)
   }
 }
 
